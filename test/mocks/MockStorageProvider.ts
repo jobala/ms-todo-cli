@@ -1,13 +1,18 @@
+import { v4 as uuidv4 } from 'uuid';
+
 import { StorageProvider } from '../../src/domain/StorageProvider'
 import { TodoItem } from '../../src/domain/TodoItem';
 
-export class StorageProviderMock implements StorageProvider {
-  StorageProviderMock() {
+export class MockStorageProvider implements StorageProvider {
+  private storage: Map<string, object>
 
+  constructor() {
+    this.storage = new Map()
   }
 
-  public add(): boolean {
-    throw new Error('Method not implemented.');
+  public add(todo: TodoItem): string {
+    this.storage.set('testId', todo)
+    return 'testId'
   }
 
   public get(id: string): TodoItem {

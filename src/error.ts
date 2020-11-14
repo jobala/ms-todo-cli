@@ -1,0 +1,1 @@
+export class DescriptionError extends Error { }
