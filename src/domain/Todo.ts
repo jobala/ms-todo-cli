@@ -10,6 +10,12 @@ export class Todo {
     this.storage = storage;
   }
 
+  /**
+   * Creates a todo
+   * 
+   * @param todo 
+   * @returns todoId
+   */
   public add(todo: string): string {
     if (todo.length < 10) {
       throw new DescriptionError('Description too short')
@@ -17,5 +23,25 @@ export class Todo {
 
     const todoId = this.storage.add({ description: todo })
     return todoId
+  }
+
+  /**
+   * List all todo items
+   * 
+   * @returns a list of todo item
+   */
+  public list(): [TodoItem] {
+    return this.storage.get()
+  }
+
+  /**
+   * Update a todo item
+   * 
+   * @param id   id of todo item to update
+   * @param body properties to update a todo item
+   * @returns TodoItem
+   */
+  public update(id: string, body: object): TodoItem {
+    return this.storage.update(id, body)
   }
 }

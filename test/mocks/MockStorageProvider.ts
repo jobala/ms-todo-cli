@@ -15,7 +15,7 @@ export class MockStorageProvider implements StorageProvider {
     return 'testId'
   }
 
-  public get(id: string): TodoItem {
+  public get(): [TodoItem] {
     throw new Error('Method not implemented.');
   }
 
