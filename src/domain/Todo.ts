@@ -1,13 +1,13 @@
 import { TodoItem } from './TodoItem'
-import { StorageProvider } from '../providers';
-import { DescriptionError } from '../error';
+import { StorageProvider } from '../providers'
+import { DescriptionError } from '../error'
 
 
 export class Todo {
-  private storage: StorageProvider;
+  private storage: StorageProvider
 
   constructor(storage: StorageProvider) {
-    this.storage = storage;
+    this.storage = storage
   }
 
   /**
