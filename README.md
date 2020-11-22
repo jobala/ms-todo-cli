@@ -8,6 +8,8 @@ A core module for building CLI todo apps. Ships with a file storage provider out
 import { FileStorageProvider } from './src/providers'
 const storage = new FileStorageProvider()
 const todo = new Todo(storage)
+
+todo.add('Get a cat')
 ```
 
 ## Build a custom storage provider
