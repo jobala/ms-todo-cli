@@ -41,7 +41,7 @@ export class Todo {
    * @param body properties to update a todo item
    * @returns TodoItem
    */
-  public update(id: string, body: object): TodoItem {
+  public update(id: string, body: TodoItem): TodoItem {
     return this.storage.update(id, body)
   }
 }
