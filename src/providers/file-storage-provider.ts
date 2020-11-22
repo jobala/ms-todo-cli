@@ -2,14 +2,14 @@ import fs from 'fs'
 
 import { v4 as uuidv4 } from 'uuid'
 
-import { StorageProvider } from "src/domain/StorageProvider";
-import { TodoItem } from "src/domain/TodoItem";
+import { StorageProvider } from "src/domain/StorageProvider"
+import { TodoItem } from "src/domain/TodoItem"
 
 const DB = 'db.json'
 
 
 export class FileStorageProvider implements StorageProvider {
-  public initialize() {
+  constructor() {
     if (!fs.existsSync(DB)) {
       this.write(JSON.stringify({}))
     }
@@ -44,6 +44,10 @@ export class FileStorageProvider implements StorageProvider {
 
     this.write(JSON.stringify(db))
     return newRecord
+  }
+
+  public clear() {
+    this.write(JSON.stringify({}))
   }
 
   private write(data: string) {
