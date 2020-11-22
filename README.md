@@ -1,2 +1,2 @@
-# ms-todo-cli
+# Todo Core
 TODO

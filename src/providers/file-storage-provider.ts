@@ -3,7 +3,7 @@ import fs from 'fs'
 import { v4 as uuidv4 } from 'uuid'
 
 import { StorageProvider } from "./storage-provider"
-import { TodoItem } from "src/domain/TodoItem"
+import { TodoItem } from "src/domain"
 
 const DB = 'db.json'
 
