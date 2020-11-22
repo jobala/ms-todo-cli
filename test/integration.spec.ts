@@ -1,5 +1,5 @@
 import { Todo } from '../src/domain/Todo'
-import { FileStorageProvider } from '../src/providers/file-storage-provider'
+import { FileStorageProvider } from '../src/providers'
 
 const storage = new FileStorageProvider()
 const todo = new Todo(storage)

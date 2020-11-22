@@ -1,6 +1,5 @@
 import { MockStorageProvider } from './mocks/MockStorageProvider'
 import { Todo } from '../src/domain/Todo';
-import { TodoItem } from '../src/domain/TodoItem';
 
 const storageProvider = new MockStorageProvider()
 const todo = new Todo(storageProvider)

@@ -1,6 +1,6 @@
 import { v4 as uuidv4 } from 'uuid';
 
-import { StorageProvider } from '../../src/domain/StorageProvider'
+import { StorageProvider } from '../../src/providers'
 import { TodoItem } from '../../src/domain/TodoItem';
 
 export class MockStorageProvider implements StorageProvider {

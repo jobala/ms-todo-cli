@@ -1,5 +1,5 @@
 import { TodoItem } from './TodoItem'
-import { StorageProvider } from './StorageProvider';
+import { StorageProvider } from '../providers';
 import { DescriptionError } from '../error';
 
 

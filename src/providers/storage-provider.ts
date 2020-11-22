@@ -1,4 +1,4 @@
-import { TodoItem } from './TodoItem'
+import { TodoItem } from '../domain/TodoItem'
 
 export interface StorageProvider {
   add(todo: TodoItem): string
