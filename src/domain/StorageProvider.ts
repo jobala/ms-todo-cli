@@ -2,7 +2,6 @@ import { TodoItem } from './TodoItem'
 
 export interface StorageProvider {
   add(todo: TodoItem): string
-  get(): [TodoItem]
+  get(): any
   update(id: string, body: object): TodoItem
-  delete(id: string): string
 }

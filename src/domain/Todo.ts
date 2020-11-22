@@ -28,9 +28,9 @@ export class Todo {
   /**
    * List all todo items
    * 
-   * @returns a list of todo item
+   * @returns a list of todo items
    */
-  public list(): [TodoItem] {
+  public list() {
     return this.storage.get()
   }
 
