@@ -28,4 +28,12 @@ describe('Integration Tests', () => {
 
     expect(todo.list()[itemId].done).toBe(true)
   })
+
+  test('UpdatedAt value is greater than createdAt after an update command', () => {
+    const itemId = todo.add('Go to work')
+    todo.update(itemId, { done: true })
+
+    const updatedToDo = todo.list()[itemId]
+    expect(updatedToDo.updatedAt).toBeGreaterThan(updatedToDo.createdAt)
+  })
 })

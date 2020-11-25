@@ -1,4 +1,4 @@
-import { TodoItem } from './TodoItem'
+import { TodoItem, UpdateProps } from './TodoItem'
 import { StorageProvider } from '../providers'
 import { DescriptionError } from '../error'
 
@@ -41,7 +41,7 @@ export class Todo {
    * @param body properties to update a todo item
    * @returns TodoItem
    */
-  public update(id: string, body: TodoItem): TodoItem {
+  public update(id: string, body: UpdateProps): TodoItem {
     return this.storage.update(id, body)
   }
 }
