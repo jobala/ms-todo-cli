@@ -7,7 +7,7 @@ export interface TodoItem {
 
 export interface UpdateProps {
   description?: string
-  done?: string
+  done?: boolean
 }
 
 export interface NewTodoProps {
