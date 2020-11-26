@@ -1,4 +1,5 @@
 import { Todo } from '../src/domain'
+import { TodoItem } from '../src/domain/TodoItem'
 import { FileStorageProvider } from '../src/providers'
 
 const storage = new FileStorageProvider()
@@ -33,7 +34,7 @@ describe('Integration Tests', () => {
     const itemId = todo.add('Go to work')
     todo.update(itemId, { done: true })
 
-    const updatedToDo = todo.list()[itemId]
+    const updatedToDo: TodoItem = todo.list()[itemId]
     expect(updatedToDo.updatedAt).toBeGreaterThan(updatedToDo.createdAt)
   })
 })

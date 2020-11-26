@@ -1,4 +1,4 @@
-import { TodoItem, UpdateProps } from './TodoItem'
+import { TodoItem, TodoItemCollection, UpdateProps } from './TodoItem'
 import { StorageProvider } from '../providers'
 import { DescriptionError } from '../error'
 
@@ -30,7 +30,7 @@ export class Todo {
    * 
    * @returns a list of todo items
    */
-  public list() {
+  public list(): TodoItemCollection {
     return this.storage.get()
   }
 

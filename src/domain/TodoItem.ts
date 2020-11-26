@@ -1,8 +1,8 @@
 export interface TodoItem {
   description: string
   done: boolean
-  createdAt: Date
-  updatedAt: Date
+  createdAt: number
+  updatedAt: number
 }
 
 export interface UpdateProps {
@@ -12,4 +12,8 @@ export interface UpdateProps {
 
 export interface NewTodoProps {
   description: string
+}
+
+export interface TodoItemCollection {
+  [key: string]: TodoItem
 }

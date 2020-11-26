@@ -4,6 +4,7 @@ import { v4 as uuidv4 } from 'uuid'
 
 import { StorageProvider } from "./storage-provider"
 import { TodoItem } from "src/domain"
+import { NewTodoProps, TodoItemCollection } from 'src/domain/TodoItem'
 
 const DB = 'db.json'
 
@@ -15,7 +16,7 @@ export class FileStorageProvider implements StorageProvider {
     }
   }
 
-  public add(todo: TodoItem): string {
+  public add(todo: NewTodoProps): string {
     const db: any = this.read()
     const id = uuidv4()
     const todoItem = Object.assign({}, todo, {
@@ -30,7 +31,7 @@ export class FileStorageProvider implements StorageProvider {
     return id
   }
 
-  public get() {
+  public get(): TodoItemCollection {
     const data = this.read()
     return data
   }
@@ -55,7 +56,7 @@ export class FileStorageProvider implements StorageProvider {
     fs.closeSync
   }
 
-  private read() {
+  private read(): TodoItemCollection {
     const data = fs.readFileSync(DB, { encoding: 'utf-8' })
     return JSON.parse(data)
   }
