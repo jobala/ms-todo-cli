@@ -5,13 +5,16 @@ import { v4 as uuidv4 } from 'uuid'
 import { StorageProvider } from "./storage-provider"
 import { TodoItem } from "src/domain"
 import { NewTodoProps, TodoItemCollection } from 'src/domain/TodoItem'
-
-const DB = 'db.json'
+import { DB_URI } from '../constants'
 
 
 export class FileStorageProvider implements StorageProvider {
-  constructor() {
-    if (!fs.existsSync(DB)) {
+  private db_uri: string
+
+  constructor(db_uri = DB_URI) {
+    this.db_uri = db_uri
+
+    if (!fs.existsSync(this.db_uri)) {
       this.write(JSON.stringify({}))
     }
   }
@@ -52,12 +55,12 @@ export class FileStorageProvider implements StorageProvider {
   }
 
   private write(data: string) {
-    fs.writeFileSync(DB, data)
+    fs.writeFileSync(this.db_uri, data)
     fs.closeSync
   }
 
   private read(): TodoItemCollection {
-    const data = fs.readFileSync(DB, { encoding: 'utf-8' })
+    const data = fs.readFileSync(this.db_uri, { encoding: 'utf-8' })
     return JSON.parse(data)
   }
 }

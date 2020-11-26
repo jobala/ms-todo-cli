@@ -1,8 +1,9 @@
 import { Todo } from '../src/domain'
 import { TodoItem } from '../src/domain/TodoItem'
 import { FileStorageProvider } from '../src/providers'
+import { TEST_DB_URI } from '../src/constants'
 
-const storage = new FileStorageProvider()
+const storage = new FileStorageProvider(TEST_DB_URI)
 const todo = new Todo(storage)
 
 describe('Integration Tests', () => {

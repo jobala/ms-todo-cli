@@ -1,5 +1,5 @@
 import { StorageProvider } from '../../src/providers'
-import { TodoItem } from '../../src/domain/TodoItem';
+import { TodoItem, TodoItemCollection } from '../../src/domain/TodoItem';
 
 export class MockStorageProvider implements StorageProvider {
   private storage: Map<string, object>
@@ -13,7 +13,7 @@ export class MockStorageProvider implements StorageProvider {
     return 'testId'
   }
 
-  public get(): [TodoItem] {
+  public get(): TodoItemCollection {
     throw new Error('Method not implemented.');
   }
 
