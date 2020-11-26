@@ -6,10 +6,12 @@ A core module for building CLI todo apps. Ships with a file storage provider out
 
 ```ts
 import { FileStorageProvider } from './src/providers'
+import { Todo } from './src/domain'
+
 const storage = new FileStorageProvider()
 const todo = new Todo(storage)
 
-todo.add('Get a cat')
+todo.add('Add delete functionality')
 ```
 
 ## Build a custom storage provider
